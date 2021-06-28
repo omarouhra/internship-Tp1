@@ -6,7 +6,7 @@
 }
 /* Body styling */
 body {
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
 }
 
 body a {
@@ -25,19 +25,29 @@ header {
 }
 nav {
   height: 100%;
+  margin: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-nav ul li {
-  display: inline;
-  margin-right: 100px;
-}
-nav img {
-  margin-right: 5px;
+.navigation {
+  flex: 3;
 }
 
+.navigation ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.socials {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
 /* Hero section */
 .hero_container {
   width: 100%;
@@ -53,6 +63,7 @@ nav img {
   flex-direction: row;
 }
 
+/* Right Container */
 .right_Content {
   flex: 4;
   display: flex;
@@ -63,12 +74,11 @@ nav img {
   padding: 40px 0;
 }
 .freelancer {
-  width: 42vw;
-  min-width: 40vw;
+  max-width: 70vw;
+  width: 65vw;
   display: flex;
   flex-direction: row;
-  align-items: stretch;
-  gap: 20px;
+  gap: 40px;
 }
 small {
   color: rgba(0, 0, 0, 0.6);
@@ -80,6 +90,11 @@ small {
   line-height: 41px;
   font-size: 36px;
   font-weight: 500;
+  font-family: serif;
+}
+.freelancer img {
+  width: 300px;
+  height: 100%;
 }
 
 .freelancer p {
@@ -89,29 +104,103 @@ small {
   color: rgba(0, 0, 0, 0.870588);
 }
 
+/* Left Container */
 .left_Content {
   background-color: #fbfbfb;
-  padding: 40px 0;
+  padding: 40px 60px;
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .left_Content h2 {
   font-size: 30px;
   line-height: 60px;
   margin-bottom: 30px;
-  text-align: center;
 }
 .left_Content ul li {
   margin-bottom: 15px;
   font-size: 17px;
+  width: auto;
 }
 
-#line{
-    height: 2px;
-    background-color: rgba(114, 114, 114, 0.349);
-    width: 65%;
-    margin: 30px;
+#line {
+  height: 2px;
+  background-color: rgba(114, 114, 114, 0.349);
+  width: 65%;
+  margin: 30px;
+}
+
+/* Desktop screens */
+@media only screen and (max-width: 1100px) {
+  .freelancers_container {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+  .freelancer {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+/* Tablet screens */
+@media only screen and (max-width: 800px) {
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+  }
+  .navigation{
+    flex: 1;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+  .freelancer h1 {
+    font-size: 25px;
+    
+  }
+  .freelancer img {
+    width: 200px;
+    height: 100%;
+  }
+  .freelancer p{
+    font-size: 14px;
+  }
+  small{
+    font-size: 12px;
+  }
+}
+
+/* Small tablet */
+
+@media only screen and (max-width: 550px) {
+  .freelancer {
+    flex: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .freelancer p{
+    text-align: justify;
+  }
+  .left_Content h2 {
+    font-size: 20px;
+   
+  }
+  .left_Content ul li {
+    font-size: 14px;
+  }
+  .left_Content {
+    padding: 40px 20px;
+  }
+
+}
+@media only screen and (max-width: 450px) {
+  header{
+  padding: 0 5px;
+    
+  }
+  .navigation_item {
+    font-size: 12px;
+  }
 }
